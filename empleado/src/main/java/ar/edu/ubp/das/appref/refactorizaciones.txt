@@ -1,0 +1,18 @@
+Bad Smell: Primitive Obsession
+Refactorización: Extract Class
+Se crearon las clases Address y PhoneNumber para encapsular las entidades que antes eran simples cadenas de texto. 
+Esto no solo mejora la legibilidad y la cohesión, sino que también permite agregar lógica específica, 
+como validaciones o formateo, en el futuro.
+
+Bad Smell: Large Class
+Refactorización: Extract Class y Delegación
+La clase Employee ahora delega la gestión de la dirección y el número de teléfono a las clases Address y PhoneNumber. 
+Esto reduce las responsabilidades en Employee, manteniendo su enfoque en las responsabilidades del empleado, como su salario 
+y sus métodos, haciendo que sea más cohesiva.
+
+Bad Smell: Long Method
+Refactorización: Extract Method y Move Method
+El método printEmployeeDetails se ha simplificado delegando la impresión de la dirección y el número de teléfono 
+a sus respectivas clases (getCompleteAddress() en Address y getPhoneNumber() en PhoneNumber). Además, el método updateAddress 
+ahora está en la clase Address, lo que permite que Employee delegue esta tarea a la clase que debe manejarla, respetando 
+el principio de responsabilidad única.

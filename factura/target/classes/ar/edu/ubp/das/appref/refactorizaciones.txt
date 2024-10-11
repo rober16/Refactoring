@@ -1,0 +1,22 @@
+Bad Smell: Primitive Obsession
+Refactorizacion: Extract Class
+La clase persona esta usando el tipo String para reprensetar la entidad cliente.
+Se extrae la clase Cliente para encapsular los datos y los metodos.
+
+Bad Smell: Data Clumps
+Refactorizacion: Extract Class
+Los atributos items y precios estan relacionados y aparecen juntos en la clase Factura.
+Por lo que se procede a agruparlos en una clase Item para encapsular los datos y mejorar la cohesion.
+
+Bad Smell: Large Class
+Refactorizacion: Move Method
+Se mueven los metodos agregarItem y calcularTotal a la clase Item ya que no corresponden a la clase Factura
+Ya que esta clase esta manejando muchas responsabilidades.
+
+Bad Smell: Feature Envy
+Refactorizacion: Move Method
+El método calcularTotal en Factura está accediendo a los precios de los ítems, 
+lo que puede indicar que tiene una "envidia" hacia la clase Item, 
+ya que el cálculo del total debería estar más relacionado con los ítems.
+mover la lógica de cálculo del total a la clase Item, donde podría sumar su propio precio y quizás
+también incluir métodos para calcular totales en un conjunto de ítems.

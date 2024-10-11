@@ -1,0 +1,9 @@
+Bad Smell: Primitive Obsession
+Refactorizacion: Extract Class
+La clase Pedido esta usando el tipo String para representar el Cliente y la Direccion.
+se extrae las clases Cliente y Direccion para encapsular los datos y la lógica.
+
+Bad Smell: Data Clumps
+Refactorizacion: Extract Class
+Los atributos productos y precios estan relacionados y aparecen juntos en la clase Pedido.
+Por lo que se procede a agruparlos en una clase Pedido para encapsular los datos y mejorar la cohesion.

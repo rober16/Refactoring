@@ -1,0 +1,8 @@
+Bad Smell: Primitive Obsession
+Refactorizacion: Extract Class
+La clase Persona están usando String para representar la dirección y el teléfono. Pueden encapsularse en clases propias 
+para encapsular los datos y los comportamientos.
+
+Bad Smell: Duplicated Code
+Refactorizacion: Substitute Algorithm
+En el método main, se repiten las líneas que crean objetos Persona e imprimen sus datos.
