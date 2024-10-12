@@ -1,0 +1,14 @@
+Bad Smell: Switch Statements
+Refactorizaciones: Replace Conditional with Polymorphism
+El método calculateSalary de la clase Employee utiliza un switch, basado en el tipo de empleado, cada vez que 
+se agregue un nuevo tipo de empleado, habría que modificar este switch.
+Usaremos Herencia para que cada tipo de empleado calcule su salario de manera diferente.
+Crearemos una clase base Employee abstracta con un método calculateSalary y subclases para cada tipo de 
+empleado (FullTimeEmployee, PartTimeEmployee, ContractEmployee).
+
+Bad Smell: Middleman
+Refactorizaciones: Remove Middle Man
+La clase Manager actúa como intermediaria en la recepción de mensajes, pero no agrega valor propio a este proceso. 
+Simplemente delega la lógica a Employee sin aportar ningún comportamiento significativo.
+Podemos eliminar la dependencia directa con Manager en el proceso de notificación y usar un servicio dedicado 
+para manejar este tipo de lógica.
