@@ -1,0 +1,23 @@
+Bad Smell: Data Clumps
+Refactorizacion: Extract Class
+La clase Order tiene los atributos customerName y customerEmail que estan relacionados
+y aparecen juntos. Por lo que se procede a agruparlos en una nueva clase Customer
+para encapsular los datos y metodos para mejorar la legibilidad y cohesion.
+
+Bad Smell: Primitive Obsession
+Refactorizacion: Extract Class
+La clase Order utiliza una lista de String para representar los items
+Cada Item va contener un name y price junto con sus metodos accesores
+Se extrae la clase Items para encapsular los datos y metodos para mejorar la legibilidad y cohesion.
+
+Bad Smell: Temporary Field
+Refactorizacion: Eliminar campo temporal
+La clase Order tiene un atributo totalPrice que no es esencial para el comportamiento general de la clase.
+solo se utiliza en algunos metodos
+por lo que se mueve el cálculo de totalPrice al método correspondiente, eliminando la necesidad de mantenerlo como un atributo.
+
+Bad Smell: Divergent Change
+Refactorizacion: Move method
+La clase Order tiene un metodo llamado sendOrderConfirmationEmail() que no se relaciona con esta.
+Por lo que este metodo se mueve a una nueva clase llamada "ConfirmationEmail" que deberia ser responsable de la misma.
+
