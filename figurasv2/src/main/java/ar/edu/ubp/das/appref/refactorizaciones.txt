@@ -1,0 +1,20 @@
+Bad Smell: Data Clumps
+Refactorizacion: Exctract Class
+La clase App tiene los atributos shape y color que estan relacionados y aparecen juntos.
+Por lo que se procede a agruparlos en una nueva clase Figura para encapsular
+los datos y metodos para mejorar la legibilidad y cohesion.
+
+Bad Smell: Duplicated Code
+Refactorizacion: Extract method
+Se encuentra codigo duplicado en App() cuando le asigna valores a los atributos size y shape.
+Se encuentra codigo duplicado en ShapePanel() cuando le cambia el tamaño a la figura.
+Se encuentra codigo duplicado en paintComponent() cuando le asigna el color a la figura.
+
+Bad Smell: Large Class
+Refactorizacion: Extract Class
+La clase App está gestionando demasiadas responsabilidades, como crear la interfaz gráfica, 
+manejar eventos de ratón, y gestionar las figuras y colores. 
+Para abordar este problema, se considera separar las responsabilidades en diferentes clases. Por ejemplo:
+App: Gestiona el ciclo de vida de la aplicación y crea la ventana principal.
+Figura: Se encarga de crear y gestionar las figuras y tamaños.
+ShapesPanel: Se mantiene como la clase encargada de la interfaz gráfica, pero con menos responsabilidades.
