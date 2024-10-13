@@ -1,0 +1,22 @@
+Bad Smell: Duplicated Code (Código duplicado)
+Refactorizaciones: 
+La lógica para imprimir el tablero está duplicada (antes y después del juego).
+"Extract Method": Se crea un método separado que imprima el tablero, eliminando la duplicación.
+
+Bad Smell: Long Method (Método largo)
+Refactorizaciones:
+El método main tiene demasiadas responsabilidades, como iniciar el juego, 
+gestionar entradas de usuarios y controlar el flujo del juego.
+"Extract Method" para dividir el método main en métodos más pequeños y específicos, 
+como iniciarTablero, obtenerJugadores, y gestionarTurno.
+
+Bad Smell: Primitive Obsession (Obsesión por primitivos)
+Refactorizaciones:
+Los nombres de los jugadores y los símbolos ('X' y 'O') son gestionados directamente como cadenas y caracteres primitivos.
+"Replace Primitive with Object" para crear una clase Jugador que encapsule el nombre y el símbolo.
+
+Bad Smell: Feature Envy (Envidia de características)
+Refactorizaciones: La lógica para verificar si un jugador ha ganado o si el tablero está lleno está dispersa en el método main.
+"Move Method" para mover estas responsabilidades a la clase Tablero, mejorando la cohesión del código.
+
+
