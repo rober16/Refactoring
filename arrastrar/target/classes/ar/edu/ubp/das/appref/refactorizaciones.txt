@@ -1,0 +1,35 @@
+Clase App
+==========
+Bad Smell: Data Clumps
+Refactorizaciones: Extract Class
+La clase App tiene los atributos prevX y prevY que estan relacionados y aparecen juntos.
+Por lo que se procede a agruparlos en una nueva clase PosicionPrevia para encapsular
+los datos y metodos, asi tambien mejorar la legibilidad y cohesion.
+
+Bad Smell: Temporary Field
+Refactorizacion: Move Field
+Los atributos c y random de la clase App solo son utilizados en algunos metodos de la clase pero
+no son escenciales para la clase en general.
+Se deben mover estos atributos en los metodos correspondientes para eliminar la necesidad de mantenerlo como atributos.
+
+Bad Smell: Duplicated Code
+Refactorizacion: Substitute Algorithm
+Se encuentra codigo duplicado en el metodo paint() en donde se crea una figura y se asocia un color de forma duplicada 
+
+Clase ShapeItem
+==========
+Bad Smell: Inappropriate Intimacy
+Refactorizacion: Encapsulate Field
+La Clase App accede directamente a los atributos de la clase ShapeItem por lo que se deben encapsular
+
+Bad Smell: Data Clumps
+Refactorizaciones: Extract Class
+La clase ShapeItem tiene los atributos shape1 y shape2 que estan relacionados y aparecen juntos.
+Por lo que se procede a agruparlos en una nueva clase Figure para encapsular
+los datos y metodos, asi tambien mejorar la legibilidad y cohesion.
+
+Bad Smell: Temporary Field
+Refactorizacion: Move Field
+Los atributos height y width de la clase ShapeItem solo son utilizados en algunos metodos de la clase pero
+no son escenciales para la clase en general.
+Se deben mover estos atributos en los metodos correspondientes para eliminar la necesidad de mantenerlo como atributos.
