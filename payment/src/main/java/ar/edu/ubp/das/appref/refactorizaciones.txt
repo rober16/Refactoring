@@ -1,0 +1,20 @@
+Bad Smell: Feature Envy
+Refactorización: Move Method
+El método notifyCustomer de la clase Payment accede demasiado a los datos y el comportamiento de la clase Customer, 
+lo que indica un caso de Feature Envy. La lógica de notificación debería estar en la clase Customer, no en Payment.
+Vamos a mover la lógica de notificación completamente a la clase Customer, para que sea el cliente el encargado de 
+recibir y enviar notificaciones.
+
+Bad Smell: Switch Statements
+Refactorización: Replace conditional with polymorphism
+El método processPayment usa un switch para diferenciar entre los tipos de pagos (tarjeta de crédito, PayPal, efectivo).
+Esto viola el principio de Abierto/Cerrado, ya que cualquier nuevo método de pago requeriría modificar este switch.
+Crearemos una clase abstracta PaymentMethod con subclases para cada tipo de pago (CreditCardPayment, PayPalPayment, CashPayment). 
+Cada subclase implementará su propia lógica para procesar el pago, eliminando el switch.
+
+Bad Smell: Inappropriate Intimacy
+Refactorización: Inyectar Customer como dependencia
+La clase Payment crea una instancia de Customer directamente dentro del método notifyCustomer(), 
+lo que crea una relación demasiado íntima entre ambas clases. Esto genera un acoplamiento innecesario.
+Para reducir el acoplamiento, Customer será inyectado como dependencia en la clase Payment,
+permitiendo una interacción más flexible y desacoplada.

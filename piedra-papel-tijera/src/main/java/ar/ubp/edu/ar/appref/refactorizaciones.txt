@@ -1,0 +1,44 @@
+CLASE: Jugador
+BAD SMELL: Inappropiate intimacy (intimidad inadecuada)
+REFACTORIZACIONES APLICADAS:
+* Encapsulate Field: La clase "Juego" podía acceder a la parte
+privada de la clase "Jugador".
+Se agregaron los modificadores de acceso "privados" sobre los atributos de la clase
+"Jugador", se agregan los métodos accesores.
+
+BAD SMELL: Duplicated code (código duplicado)
+REFACTORIZACIONES APLICADAS:
+* Rename Field/Method: Se corrige el nombre del atributo "g" por "ganados" para darle
+mayor entendibilidad al código, lo que duplica el método getG() al intentar corregir
+ya que existe un método getGanados(), se elimina el duplicado.
+
+BAD SMELL: Switch statements (estructura de agrupación condicional)
+REFACTORIZACIONES APLICADAS:
+Inline Temp: En el método getResultado() se deja de usar la variable temporal que
+determinaba el resultado de la jugada a partir del cálculo de un valor aleatorio.
+Se retorna directamente dicho valor. Se cambia la lógica en "Juego" para acceder
+directamente a la posición en el array de resultados.
+
+-------------------------------------------------------------------------------------
+CLASE: Juego
+BAD SMELL: Feature envy (envidia de características)
+REFACTORIZACIONES APLICADAS:
+Move Field/Method: El array de resultados se utiliza dentro de la lógica de la clase
+"Juego" y no dentro de la clase "Jugador" para mejorar la cohesión se mueve el
+atributo con sus métodos accesores.
+Se declara el array estático para poder usarlo dentro del método main.
+Finalmente, se evalúa que no es necesario los métodos accesores.
+
+BAD SMELL: Switch statements (estructura de agrupación condicional)
+REFACTORIZACIONES APLICADAS:
+Replace conditional with polymorphism: Se creó la clase abstracta "Opcion" con el
+método "jugar()" también abstracto y se crearon las clases OpcionTijera, OpcionPapel
+y OpcionPiedra que extienden de la misma e implementan el método. Los valores retornados
+son: 1: Pierdo, -1: Gano 0: Empato.
+Se cambió el tipo de dato del array resultados para que incluya objetos del tipo
+"Opcion".
+Se corrigieron las variables de instancia selJ1 y selJ2 para que sean del tipo "Opcion"
+y se corrigieron los if-else con la nueva lógica según el retorno del método jugar()
+reduciendo su cantidad.
+
+-------------------------------------------------------------------------------------

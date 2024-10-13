@@ -1,0 +1,17 @@
+Bad Smell: Switch Statements
+Refactorizacion: Replace conditional with polymorphism
+La clase Notification utiliza un switch para diferenciar entre las formas de envios de notificaciones
+Esto viola el principio de Abierto/Cerrado, ya que cualquier nueva forma de envio requeriría modificar este switch.
+Crearemos una clase abstracta NotificationMethod con subclases para cada forma de envio de notificaciones
+(Email, SMS, Push). Cada subclase implementará su propia lógica para la forma de envio, eliminando el switch.
+
+Bad Smell: Feature Envy
+Refactorizacion: Move Method
+El método notifyUser() de la clase Notification accede demasiado a los datos y el comportamiento de la clase User.
+La lógica de notificación debería estar en la clase User, no en Notification.
+Se mueve la lógica de notifyUser() completamente a la clase User.
+
+Bad Smell: Inappropriate Intimacy
+Refactorizacion: Dependency Injection
+La clase Notification crea una instancia de User directamente dentro del método notifyUser(), lo que crea una relación 
+demasiado íntima entre ambas clases. Esto genera un acoplamiento innecesario.
