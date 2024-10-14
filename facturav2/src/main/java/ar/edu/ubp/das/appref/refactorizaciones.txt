@@ -1,0 +1,30 @@
+Clase Factura
+
+Bad Smell: Temporary field
+Refactorizacion: Move field
+Se mueve el atributo fecha de la clase Factura al metodo mostrarFactura() ya que es un atributo que no es relevante para la clase
+
+Bad Smell: Data Clumps
+Refactorizacion: Extract Class
+Los atributos apellidoCliente, nombreCliente, docCliente de la clase Factura
+representa una entidad por lo que se debe extraer la clase y encapsular los datos y metodos
+
+
+Clase Tarifa
+
+Bad Smell: Inappropiate intimacy
+Refactorizacion: Encapsulate Field
+Se deben encapsular los atributos de la clase Tarifa
+
+Bad Smell: Duplicated Code
+Refactorizacion: Substitute Algorithm
+En el método getDescuento(), hay múltiples if que podrían simplificarse.
+Se utiliza un Map para almacenar las tarifas de descuento en lugar de usar múltiples condicionales.
+
+
+Clase Entrada
+
+Bad Smell: Inappropiate intimacy
+Refactorizacion: Encapsulate Field
+Se tiene que encapsular los datos y metodos para esta clase.
+Se tuvo que modificar la clase Factura ya que los metodos son privados.
